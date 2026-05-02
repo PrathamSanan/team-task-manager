@@ -43,3 +43,9 @@ app.use("/api/tasks", taskRoutes);
 
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 app.use("/api/dashboard", dashboardRoutes);
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
