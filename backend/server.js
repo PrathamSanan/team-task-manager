@@ -36,9 +36,10 @@ app.get("/api/admin", protect, adminOnly, (req, res) => {
 
 
 import projectRoutes from "./routes/projectRoutes.js";
-
 app.use("/api/projects", projectRoutes);
 
 import taskRoutes from "./routes/taskRoutes.js";
-
 app.use("/api/tasks", taskRoutes);
+
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+app.use("/api/dashboard", dashboardRoutes);
