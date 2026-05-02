@@ -33,3 +33,8 @@ app.get("/api/protected", protect, (req, res) => {
 app.get("/api/admin", protect, adminOnly, (req, res) => {
   res.json({ message: "Admin route accessed" });
 });
+
+
+import projectRoutes from "./routes/projectRoutes.js";
+
+app.use("/api/projects", projectRoutes);
