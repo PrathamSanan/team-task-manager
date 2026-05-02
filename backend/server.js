@@ -23,3 +23,13 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/auth", authRoutes);
+
+import { protect, adminOnly } from "./middleware/authMiddleware.js";
+
+app.get("/api/protected", protect, (req, res) => {
+  res.json({ message: "Protected route accessed" });
+});
+
+app.get("/api/admin", protect, adminOnly, (req, res) => {
+  res.json({ message: "Admin route accessed" });
+});
